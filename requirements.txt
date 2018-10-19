@@ -1,0 +1,6 @@
+numpy
+pandas
+scikit-learn
+Keras==2.2.4
+# tensorflow if you have no GPUs
+tensorflow-gpu==1.8.0
