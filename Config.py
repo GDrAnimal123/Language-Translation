@@ -22,10 +22,6 @@ TRAIN_DEST = "datasets/train/train.vi"
 VALIDATION_SRC = "datasets/valid/valid.en"
 VALIDATION_DEST = "datasets/valid/valid.vi"
 
-# Location of your tokenizer (for Save and Load)
-TOKENIZER_SRC = "build/src_tokenizers.p"
-TOKENIZER_DEST = "build/dest_tokenizers.p"
-
 # Pretrained model path for inference
 WEIGHT_PATH = "checkpoint/model/translation_st512-em256-w20000-05-38.9995.h5"
 

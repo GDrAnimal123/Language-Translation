@@ -20,8 +20,4 @@ More: http://colah.github.io/posts/2015-08-Understanding-LSTMs/
 ## Run
 To run any notebook, use:
 
-`jupyter notebook machine_translation.ipynb`
-
-To run any script file, use:
-
-`python <script.py>`
+`jupyter notebook Machine_Translation.ipynb`
