@@ -69,24 +69,17 @@ if __name__ == "__main__":
     s2s.build(NUM_WORDS, EMBEDDING_SIZE, STATE_SIZE, LAYERS, DROPOUT_RATE)
     s2s.compile('rmsprop')
     s2s.model.summary()
+    s2s.decoder_model.summary()
 
-    # Necessary callbacks
-    callback_print = TestCallback(valid_src, valid_dest)
-    callback_early_stopping = EarlyStopping(patience=3, verbose=1)
-    callback_tensorboard = TensorBoard(log_dir=LOGS_PATH)
-    callback_checkpoint = ModelCheckpoint(MODEL_PATH + '-{epoch:02d}-{val_loss:.4f}.h5',
-                                          monitor='val_loss',
-                                          save_best_only=True,
-                                          period=1)
-    callbacks = [callback_print, callback_early_stopping, callback_checkpoint, callback_tensorboard]  # callback_tensorboard, callback_checkpoint
+    # # Necessary callbacks
+    # callback_print = TestCallback(valid_src, valid_dest)
+    # callback_early_stopping = EarlyStopping(patience=3, verbose=1)
+    # callback_tensorboard = TensorBoard(log_dir=LOGS_PATH)
+    # callback_checkpoint = ModelCheckpoint(MODEL_PATH + '-{epoch:02d}-{val_loss:.4f}.h5',
+    #                                       monitor='val_loss',
+    #                                       save_best_only=True,
+    #                                       period=1)
+    # callbacks = [callback_print, callback_early_stopping, callback_checkpoint, callback_tensorboard]  # callback_tensorboard, callback_checkpoint
 
-    # Start training
-    # I use RMSprop out of my habits, feel free to use something like Adam or SGD (My guess wouldn't matter :)
-    # optimizer = RMSprop(lr=LR)
-    # model_train.compile(optimizer=optimizer,
-    #                     loss="sparse_categorical_crossentropy")
-
-    # s2s.model.save_weights('model.h5')
-
-    s2s.model.fit([x_train, y_train], None, batch_size=BATCH_SIZE, epochs=EPOCHS,
-                  validation_split=0.2, callbacks=callbacks)
+    # s2s.model.fit([x_train, y_train], None, batch_size=BATCH_SIZE, epochs=EPOCHS,
+    #               validation_split=0.2, callbacks=callbacks)
