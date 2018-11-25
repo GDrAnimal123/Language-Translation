@@ -1,11 +1,7 @@
 # Machine Translation
 
 ## Introduction
-Build a deep neural network that functions as part of an end-to-end machine translation pipeline. The pipeline accepts English text as input and returns the Vietnamese translation. There are three main steps:
-
-* Preprocess - Convert text to sequence of integers.
-* Models - Create models which accept a sequence of integers as input and return a probability distribution over possible translations.
-* Prediction - Run the best model on English text.
+Build a deep neural network that functions as part of an end-to-end machine translation pipeline. The pipeline accepts English text as input and returns the Vietnamese translation.
 
 ## Models
 I make use of Seq2Seq architecture which Encoder learns the English sentence representation and feed that in Decoder to translate into corresponding Vietnamese sentence.
